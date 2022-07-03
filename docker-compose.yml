@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    container_name: todo
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/pgdata
+    environment:
+      POSTGRES_DB: todo
+      POSTGRES_PASSWORD: root
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
