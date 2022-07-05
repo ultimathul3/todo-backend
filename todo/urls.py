@@ -9,7 +9,7 @@ from .views import (
 
 
 router = routers.DefaultRouter()
-router.register(r'todos', TodosViewSet)
+router.register(r'todos', TodosViewSet, basename='todos')
 
 urlpatterns = [
     path('signin/', Signin.as_view()),

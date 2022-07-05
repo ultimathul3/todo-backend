@@ -41,6 +41,8 @@ class TodosPagination(PageNumberPagination):
 
 
 class TodosViewSet(viewsets.ModelViewSet):
-    queryset = Todos.objects.all()
     serializer_class = TodosSerializer
     pagination_class = TodosPagination
+
+    def get_queryset(self):
+        return Todos.objects.filter(user=self.request.user)
