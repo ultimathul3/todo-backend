@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Todos(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
